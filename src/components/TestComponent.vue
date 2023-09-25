@@ -17,6 +17,17 @@
             name:"shivam raj"
         }
     },
+    created:function(){
+        console.log('created');
+    },
+    mounted:function(){
+        console.log('mounted');
+    },
+    updated:function(){
+        console.log('updated'); },
+        unmounted:function() {
+            console.log('destroyed')
+        },
     methods: {
         greet:function(){
         this.name=""
