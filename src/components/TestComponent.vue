@@ -1,6 +1,8 @@
 <template>
     <div id="testing">
          Hello! {{ name }} Testing
+         <br>
+         {{ date }}
     </div>
     <div class="main">
     <input type="text" v-model="name"><br><br>
@@ -14,19 +16,24 @@
     name:"TestComponent",
     data:()=>{
         return {
-            name:"shivam raj"
+            name:"shivam raj",
+            date:false
         }
     },
     created:function(){
         console.log('created');
+        this.date=new Date();
     },
     mounted:function(){
         console.log('mounted');
+        this.date=new Date();
     },
     updated:function(){
         console.log('updated'); },
-        unmounted:function() {
+
+     unmounted:function() {
             console.log('destroyed')
+            //this.date=new Date();
         },
     methods: {
         greet:function(){
@@ -40,7 +47,7 @@
 </script>
 <style>
  #testing{
-    font-size: 4em;
+    font-size: 2em;
     text-align: center;
  }
  .main{
