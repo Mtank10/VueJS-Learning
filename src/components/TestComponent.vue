@@ -1,16 +1,24 @@
 <template>
     <div id="testing">
-        <div :class="{ red:isRed}">
+        <!-- <div :class="{ red:isRed}"> -->
          Hello! {{ name }} Testing
-        </div>
+        <!-- </div> -->
          <br>
-         {{ date }}
+         <!-- {{ date }} -->
     </div>
     <div class="main">
-    <input type="text" v-model="name"><br><br>
+    <!-- <input type="text" v-model="name"><br><br>
     <button @click="greet">Clear</button><br><br>
     <button @click="capitalize">Convert UpperCase</button>
-    <input :checked="isRed" v-model="isRed" type="checkbox" @click="red">
+    <input :checked="isRed" v-model="isRed" type="checkbox" @click="red"> -->
+    <div v-bind:style="{color:color_value.color}">Change Color</div>
+
+  <select v-model="color_value">
+  <option  v-bind:value="{color:'black'}">Black</option>
+  <option  v-bind:value="{color:'red'}">Red</option>
+  <option  v-bind:value="{color:'green'}">Green</option>
+  <option  v-bind:value="{color:'blue'}">Blue</option>
+</select>
     </div>
 </template>
 
@@ -21,7 +29,9 @@
         return {
             name:"shivam raj",
              date:false,
-             isRed:false
+              color_value:{
+                color:"black"
+              }
         }
     },
     //  computed: {
